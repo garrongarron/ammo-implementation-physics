@@ -24,8 +24,6 @@ function init() {
 
     createObjects();
 
-    initInput();
-
 }
 
 function initGraphics() {
@@ -169,34 +167,6 @@ function createRandomColor() {
 function createMaterial() {
 
     return new THREE.MeshPhongMaterial({ color: createRandomColor() });
-
-}
-
-function initInput() {
-
-    window.addEventListener('keydown', function (event) {
-
-        switch (event.keyCode) {
-
-            // Q
-            case 81:
-                armMovement = 1;
-                break;
-
-            // A
-            case 65:
-                armMovement = - 1;
-                break;
-
-        }
-
-    });
-
-    window.addEventListener('keyup', function () {
-
-        armMovement = 0;
-
-    });
 
 }
 
