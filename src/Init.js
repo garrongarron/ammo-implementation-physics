@@ -5,10 +5,10 @@ import renderer from './Renderer';
 import light from './Light';
 import camera from './Camera';
 import stats from './Stats';
+import textureLoader from './TextureLoader';
 
 // Graphics variables
 let scene;
-let textureLoader;
 const clock = new THREE.Clock();
 
 // Physics variables
@@ -33,10 +33,7 @@ function init() {
 function initGraphics() {
     
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xbfd1e5);
-
-    textureLoader = new THREE.TextureLoader();
-   
+    scene.background = new THREE.Color(0xbfd1e5);   
     scene.add(light);
 
     window.addEventListener('resize', onWindowResize);
