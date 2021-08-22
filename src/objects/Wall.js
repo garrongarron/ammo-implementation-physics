@@ -21,9 +21,7 @@ const createWall = () => {
         if (oddRow) {
             pos.z -= 0.25 * brickLength;
         }
-
         const nRow = oddRow ? numBricksLength + 1 : numBricksLength;
-
         for (let i = 0; i < nRow; i++) {
             let brickLengthCurrent = brickLength;
             let brickMassCurrent = brickMass;
