@@ -1,0 +1,20 @@
+{
+  "name": "webpack-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack watch --mode=development --config webpack.config.js",
+    "prod": "webpack --mode=production --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Samu Garron <samugarrondev@gmail.com> (https://www.youtube.com/channel/UCvZ-Ssn7OLkSCbfc1xRAnTw)",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "three": "^0.131.3"
+  }
+}
