@@ -3,10 +3,12 @@ import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import container from './Container';
+import renderer from './Renderer';
 
 // Graphics variables
-let container, stats;
-let camera, controls, scene, renderer;
+let  stats;
+let camera, controls, scene;
 let textureLoader;
 const clock = new THREE.Clock();
 
@@ -16,7 +18,6 @@ let physicsWorld;
 const rigidBodies = [];
 const margin = 0.05;
 let transformAux1;
-
 
 function init() {
 
@@ -32,7 +33,7 @@ function init() {
 
 function initGraphics() {
 
-    container = document.getElementById('container');
+    
 
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.2, 2000);
 
@@ -41,11 +42,8 @@ function initGraphics() {
 
     camera.position.set(- 12, 7, 4);
 
-    renderer = new THREE.WebGLRenderer();
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.shadowMap.enabled = true;
-    container.appendChild(renderer.domElement);
+    
+    
 
     controls = new OrbitControls(camera, renderer.domElement);
     controls.target.set(0, 2, 0);
@@ -126,8 +124,8 @@ function createObjects() {
     const brickLength = 1.2;
     const brickDepth = 0.6;
     const brickHeight = brickLength * 0.5;
-    const numBricksLength = 2;
-    const numBricksHeight = 2;
+    const numBricksLength = 1;
+    const numBricksHeight = 1;
     const z0 = - numBricksLength * brickLength * 0.5;
     pos.set(0, brickHeight * 0.5, z0);
     quat.set(0, 0, 0, 1);
