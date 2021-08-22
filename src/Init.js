@@ -1,14 +1,12 @@
 import * as THREE from 'three';
 
-import Stats from 'three/examples/jsm/libs/stats.module.js';
 import './Controls'
-import container from './Container';
 import renderer from './Renderer';
 import light from './Light';
 import camera from './Camera';
+import stats from './Stats';
 
 // Graphics variables
-let stats;
 let scene;
 let textureLoader;
 const clock = new THREE.Clock();
@@ -40,11 +38,6 @@ function initGraphics() {
     textureLoader = new THREE.TextureLoader();
    
     scene.add(light);
-
-    stats = new Stats();
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.top = '0px';
-    container.appendChild(stats.domElement);
 
     window.addEventListener('resize', onWindowResize);
 
