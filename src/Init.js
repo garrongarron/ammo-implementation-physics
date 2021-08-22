@@ -1,15 +1,15 @@
 import * as THREE from 'three';
 
 import Stats from 'three/examples/jsm/libs/stats.module.js';
-
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import './Controls'
 import container from './Container';
 import renderer from './Renderer';
 import light from './Light';
+import camera from './Camera';
 
 // Graphics variables
-let  stats;
-let camera, controls, scene;
+let stats;
+let scene;
 let textureLoader;
 const clock = new THREE.Clock();
 
@@ -33,22 +33,9 @@ function init() {
 }
 
 function initGraphics() {
-
     
-
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.2, 2000);
-
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xbfd1e5);
-
-    camera.position.set(- 12, 7, 4);
-
-    
-    
-
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.set(0, 2, 0);
-    controls.update();
 
     textureLoader = new THREE.TextureLoader();
    
