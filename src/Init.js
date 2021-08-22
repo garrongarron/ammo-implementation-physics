@@ -5,6 +5,7 @@ import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import container from './Container';
 import renderer from './Renderer';
+import light from './Light';
 
 // Graphics variables
 let  stats;
@@ -50,26 +51,7 @@ function initGraphics() {
     controls.update();
 
     textureLoader = new THREE.TextureLoader();
-
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(- 7, 10, 15);
-    light.castShadow = true;
-    const d = 10;
-    light.shadow.camera.left = - d;
-    light.shadow.camera.right = d;
-    light.shadow.camera.top = d;
-    light.shadow.camera.bottom = - d;
-
-    light.shadow.camera.near = 2;
-    light.shadow.camera.far = 50;
-
-    light.shadow.mapSize.x = 1024;
-    light.shadow.mapSize.y = 1024;
-
-    light.shadow.bias = - 0.003;
+   
     scene.add(light);
 
     stats = new Stats();
