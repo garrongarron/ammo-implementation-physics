@@ -7,6 +7,7 @@ import camera from './Camera';
 import stats from './Stats';
 import textureLoader from './TextureLoader';
 import scene from './Scene';
+import onWindowResize from './Resize';
 
 // Graphics variables
 const clock = new THREE.Clock();
@@ -216,15 +217,6 @@ function initInput() {
         armMovement = 0;
 
     });
-
-}
-
-function onWindowResize() {
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
 
 }
 
