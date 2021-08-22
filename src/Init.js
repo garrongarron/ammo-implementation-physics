@@ -120,7 +120,6 @@ function updatePhysics(deltaTime) {
     }
 }
 
-
 export default init
 
 export { animate }
