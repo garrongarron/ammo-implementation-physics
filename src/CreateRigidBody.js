@@ -14,6 +14,7 @@ function createRigidBody(threeObject, physicsShape, mass, pos, quat) {
     physicsShape.calculateLocalInertia(mass, localInertia);
     const rbInfo = new Ammo.btRigidBodyConstructionInfo(mass, motionState, physicsShape, localInertia);
     const body = new Ammo.btRigidBody(rbInfo);
+    //Here we add a physicBody to the mesh
     threeObject.userData.physicsBody = body;
     scene.add(threeObject);
     if (mass > 0) {
@@ -21,6 +22,7 @@ function createRigidBody(threeObject, physicsShape, mass, pos, quat) {
         // Disable deactivation
         body.setActivationState(4);
     }
+    //here we add the body into the world
     physicsWorld.addRigidBody(body);
 }
 
