@@ -30,7 +30,7 @@ let createBrick = () => {
     let width = 1
     let height = 1
     let deep = 1
-    let mass = .5
+    let mass = 5
     let material = createMaterial()
     createParalellepiped(width, height, deep, mass, pos, quat, material);
 }
@@ -71,8 +71,9 @@ function render() {
             body.setWorldTransform(worldTrans);
         }
 
-
-        body.applyImpulse(new Ammo.btVector3(x, y, z));
+        
+        body.applyForce(new Ammo.btVector3(x, y, z),new Ammo.btVector3(0, 1, 1) );
+        // body.applyImpulse(new Ammo.btVector3(x, y, z));
         // body.applyCentralImpulse(new Ammo.btVector3(x, y, z));
         // body.setLinearVelocity(new Ammo.btVector3(x, y, z));
         // body.setAngularVelocity(new Ammo.btVector3(1, 0, 0));
