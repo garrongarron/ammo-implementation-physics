@@ -72,8 +72,8 @@ function render() {
         }
 
         
-        body.applyForce(new Ammo.btVector3(x, y, z),new Ammo.btVector3(0, 1, 1) );
-        // body.applyImpulse(new Ammo.btVector3(x, y, z));
+        // body.applyForce(new Ammo.btVector3(x, y, z),new Ammo.btVector3(0, 0, 0) );//Doesnt work for me!
+        body.applyImpulse(new Ammo.btVector3(x, y, z));
         // body.applyCentralImpulse(new Ammo.btVector3(x, y, z));
         // body.setLinearVelocity(new Ammo.btVector3(x, y, z));
         // body.setAngularVelocity(new Ammo.btVector3(1, 0, 0));
