@@ -11,6 +11,7 @@
   "author": "Samu Garron <samugarrondev@gmail.com> (https://www.youtube.com/channel/UCvZ-Ssn7OLkSCbfc1xRAnTw)",
   "license": "MIT",
   "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.8.0"
   },
